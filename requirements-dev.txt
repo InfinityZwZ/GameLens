@@ -1,2 +1,5 @@
 -r requirements.txt
 pytest>=8,<10
+# Dense/Hybrid regression tests use numeric vector operations with fake encoders.
+# Keep offline CI independent of torch, model weights and hosted APIs.
+numpy>=2,<3
