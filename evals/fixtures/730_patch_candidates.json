@@ -1,0 +1,28 @@
+[
+  {
+    "news_id": "p1",
+    "appid": 730,
+    "title": "Fixture Patch 1",
+    "url": "https://example.invalid/patch/p1",
+    "author": "fixture",
+    "contents": "固定评测数据，不是线上游戏事实。",
+    "feed_label": "fixture",
+    "feed_name": "fixture",
+    "published_at": "2027-01-15T08:00:00.000Z",
+    "published_at_timestamp": 1800000000,
+    "is_patch_candidate": true
+  },
+  {
+    "news_id": "p2",
+    "appid": 730,
+    "title": "Fixture Patch 2",
+    "url": "https://example.invalid/patch/p2",
+    "author": "fixture",
+    "contents": "固定评测数据，不是线上游戏事实。",
+    "feed_label": "fixture",
+    "feed_name": "fixture",
+    "published_at": "2027-01-17T08:00:00.000Z",
+    "published_at_timestamp": 1800172800,
+    "is_patch_candidate": true
+  }
+]

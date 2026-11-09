@@ -1,0 +1,18 @@
+{
+  "source_sha256": "4e588769c745919f0e3c0afd63df10d6dfe2c76c9b3c53d97d4248f7b69b0015",
+  "presentation": "historical saved run rendered offline with current UI",
+  "real_time_model_calls": 0,
+  "original_answer_changed": false,
+  "omitted": [
+    "raw comments",
+    "player identities",
+    "source URLs",
+    "local paths",
+    "tool payloads",
+    "telemetry"
+  ],
+  "limitations": [
+    "Partial historical collection: 200 of 558 replies; not current default 500.",
+    "Original tool failure and scope caveats retained; not claimed as a fully passed investigation."
+  ]
+}

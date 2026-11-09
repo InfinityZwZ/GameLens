@@ -1,0 +1,62 @@
+{
+  "schema_version": 2,
+  "dataset_id": "gamelens-synthetic-retrieval-v2",
+  "note": "现有8题为项目原有人工编写标签；新增题仅作为待人工复核候选，pending_review不会进入正式指标。",
+  "label_provenance": {
+    "reviewed": {
+      "origin": "project_authored_v1",
+      "formal_metrics_allowed": true,
+      "note": "沿用阶段零前项目内已有的8条人工编写标签；本轮未重新标注。"
+    },
+    "pending_review": {
+      "origin": "coding_assistant_candidate",
+      "formal_metrics_allowed": false,
+      "note": "本轮新增候选题，必须经独立人工复核后才能改为reviewed。"
+    }
+  },
+  "cases": [
+    {"id":"startup_zh","query":"打不开游戏，进不了主菜单","kind":"reviews","split":"development","language":"zh","tags":["startup","zh"],"review_status":"reviewed","labels":[{"source_id":"rag0","relevance":3,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"}]},
+    {"id":"startup_en","query":"Unable to launch the game after installing the update","kind":"reviews","split":"holdout","language":"en","tags":["startup","en"],"review_status":"reviewed","labels":[{"source_id":"rag0","relevance":2,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"}]},
+    {"id":"performance_en","query":"Stuttering and unresponsive controls during team fights","kind":"reviews","split":"holdout","language":"en","tags":["performance","cross_language"],"review_status":"reviewed","labels":[{"source_id":"rag2","relevance":3,"role":"support"}]},
+    {"id":"network_zh","query":"联机掉线，高延迟","kind":"reviews","split":"development","language":"zh","tags":["network"],"review_status":"reviewed","labels":[{"source_id":"rag3","relevance":3,"role":"support"}]},
+    {"id":"refund_zh","query":"被重复收取费用如何退款","kind":"reviews","split":"development","language":"zh","tags":["payment"],"review_status":"reviewed","labels":[{"source_id":"rag5","relevance":3,"role":"support"}]},
+    {"id":"translation_en","query":"Incorrect subtitle translations and missing Chinese voice acting","kind":"reviews","split":"holdout","language":"en","tags":["localization","cross_language"],"review_status":"reviewed","labels":[{"source_id":"rag7","relevance":3,"role":"support"}]},
+    {"id":"patch_startup","query":"公告中是否修复无法启动和退回桌面","kind":"announcements","split":"holdout","language":"zh","tags":["announcement","startup"],"review_status":"reviewed","labels":[{"source_id":"rag-news1","relevance":3,"role":"support"}]},
+    {"id":"patch_audio","query":"脚步声音效有哪些改动","kind":"announcements","split":"development","language":"zh","tags":["announcement","audio"],"review_status":"reviewed","labels":[{"source_id":"rag-news2","relevance":3,"role":"support"}]},
+
+    {"id":"startup_mixed","query":"更新后 launch 不起来，卡在 main menu 前","kind":"reviews","split":"development","language":"mixed","tags":["startup","mixed"],"review_status":"pending_review","labels":[{"source_id":"rag0","relevance":3,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"}]},
+    {"id":"launch_desktop_zh","query":"启动时直接退回桌面","kind":"reviews","split":"holdout","language":"zh","tags":["startup","paraphrase"],"review_status":"pending_review","labels":[{"source_id":"rag1","relevance":3,"role":"support"}]},
+    {"id":"stutter_zh","query":"团战画面卡顿不连贯","kind":"reviews","split":"development","language":"zh","tags":["performance"],"review_status":"pending_review","labels":[{"source_id":"rag2","relevance":3,"role":"support"}]},
+    {"id":"input_lag_en","query":"mouse input feels delayed in combat","kind":"reviews","split":"holdout","language":"en","tags":["performance","cross_language"],"review_status":"pending_review","labels":[{"source_id":"rag2","relevance":3,"role":"support"}]},
+    {"id":"network_en","query":"high latency and frequent disconnects after update","kind":"reviews","split":"development","language":"en","tags":["network","cross_language"],"review_status":"pending_review","labels":[{"source_id":"rag3","relevance":3,"role":"support"}]},
+    {"id":"disconnect_zh","query":"服务器总断开连接","kind":"reviews","split":"holdout","language":"zh","tags":["network"],"review_status":"pending_review","labels":[{"source_id":"rag3","relevance":3,"role":"support"}]},
+    {"id":"refund_en","query":"charged twice and need a refund","kind":"reviews","split":"development","language":"en","tags":["payment","cross_language"],"review_status":"pending_review","labels":[{"source_id":"rag5","relevance":3,"role":"support"}]},
+    {"id":"duplicate_charge_mixed","query":"结算 duplicate charge 扣款两次","kind":"reviews","split":"holdout","language":"mixed","tags":["payment","mixed"],"review_status":"pending_review","labels":[{"source_id":"rag5","relevance":3,"role":"support"}]},
+    {"id":"localization_zh","query":"中文字幕翻译不正确","kind":"reviews","split":"development","language":"zh","tags":["localization"],"review_status":"pending_review","labels":[{"source_id":"rag7","relevance":3,"role":"support"}]},
+    {"id":"chinese_voice_zh","query":"玩家希望增加中文配音","kind":"reviews","split":"holdout","language":"zh","tags":["localization","voice"],"review_status":"pending_review","labels":[{"source_id":"rag7","relevance":3,"role":"support"}]},
+    {"id":"stable_counterexample","query":"有没有玩家说运行流畅且从未闪退","kind":"reviews","split":"development","language":"zh","tags":["counterexample","negation"],"review_status":"pending_review","labels":[{"source_id":"rag6","relevance":3,"role":"counterexample"}]},
+    {"id":"crash_with_counterexample","query":"找出闪退反馈以及没有闪退的相反体验","kind":"reviews","split":"holdout","language":"zh","tags":["counterexample","crash"],"review_status":"pending_review","labels":[{"source_id":"rag0","relevance":2,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"},{"source_id":"rag6","relevance":3,"role":"counterexample"}]},
+    {"id":"pretty_map_music","query":"新地图画面和音乐获得了什么反馈","kind":"reviews","split":"development","language":"zh","tags":["content","positive"],"review_status":"pending_review","labels":[{"source_id":"rag4","relevance":3,"role":"support"}]},
+    {"id":"no_answer_save_corruption","query":"存档损坏导致进度丢失","kind":"reviews","split":"holdout","language":"zh","tags":["no_answer"],"review_status":"pending_review","labels":[]},
+    {"id":"no_answer_controller_drift","query":"controller stick drift after patch","kind":"reviews","split":"development","language":"en","tags":["no_answer"],"review_status":"pending_review","labels":[]},
+    {"id":"negative_no_crash","query":"没有发生闪退的反馈","kind":"reviews","split":"holdout","language":"zh","tags":["negation","counterexample"],"review_status":"pending_review","labels":[{"source_id":"rag6","relevance":3,"role":"counterexample"}]},
+    {"id":"startup_long_query","query":"请查找安装更新以后点击开始游戏却停在加载画面、无法进入主菜单或直接关闭到桌面的玩家原文","kind":"reviews","split":"development","language":"zh","tags":["startup","long_query"],"review_status":"pending_review","labels":[{"source_id":"rag0","relevance":3,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"}]},
+    {"id":"stutter_cross_language","query":"frame pacing stutters while the mouse stops responding","kind":"reviews","split":"holdout","language":"en","tags":["performance","cross_language"],"review_status":"pending_review","labels":[{"source_id":"rag2","relevance":3,"role":"support"}]},
+
+    {"id":"patch_translation","query":"哪份公告提到字幕翻译修复","kind":"announcements","split":"development","language":"zh","tags":["announcement","localization"],"review_status":"pending_review","labels":[{"source_id":"rag-news2","relevance":3,"role":"support"}]},
+    {"id":"patch_footsteps_en","query":"official patch notes about footstep sound propagation","kind":"announcements","split":"holdout","language":"en","tags":["announcement","audio","cross_language"],"review_status":"pending_review","labels":[{"source_id":"rag-news2","relevance":3,"role":"support"}]},
+    {"id":"patch_no_server","query":"公告是否修复服务器高延迟","kind":"announcements","split":"development","language":"zh","tags":["announcement","no_answer"],"review_status":"pending_review","labels":[]},
+    {"id":"patch_launch_en","query":"patch note that fixes closing to desktop on startup","kind":"announcements","split":"holdout","language":"en","tags":["announcement","startup","cross_language"],"review_status":"pending_review","labels":[{"source_id":"rag-news1","relevance":3,"role":"support"}]},
+    {"id":"patch_menu_zh","query":"官方有没有修复进不了主菜单","kind":"announcements","split":"development","language":"zh","tags":["announcement","startup"],"review_status":"pending_review","labels":[{"source_id":"rag-news1","relevance":3,"role":"support"}]},
+    {"id":"patch_no_refund","query":"哪份更新公告说明重复扣款退款","kind":"announcements","split":"holdout","language":"zh","tags":["announcement","no_answer"],"review_status":"pending_review","labels":[]},
+
+    {"id":"both_launch","query":"玩家启动失败反馈与官方修复公告","kind":"both","split":"development","language":"zh","tags":["mixed_source","startup"],"review_status":"pending_review","labels":[{"source_id":"rag0","relevance":3,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"},{"source_id":"rag-news1","relevance":3,"role":"support"}]},
+    {"id":"both_translation","query":"玩家字幕翻译问题和公告中的修复","kind":"both","split":"holdout","language":"zh","tags":["mixed_source","localization"],"review_status":"pending_review","labels":[{"source_id":"rag7","relevance":3,"role":"support"},{"source_id":"rag-news2","relevance":3,"role":"support"}]},
+    {"id":"both_audio","query":"脚步声相关的玩家反馈与更新说明","kind":"both","split":"development","language":"zh","tags":["mixed_source","audio"],"review_status":"pending_review","labels":[{"source_id":"rag-news2","relevance":3,"role":"support"}]},
+    {"id":"both_performance_no_patch","query":"性能卡顿的玩家反馈以及对应公告","kind":"both","split":"holdout","language":"zh","tags":["mixed_source","performance","partial"],"review_status":"pending_review","labels":[{"source_id":"rag2","relevance":3,"role":"support"}]},
+    {"id":"both_network_no_patch","query":"服务器延迟掉线反馈和官方说明","kind":"both","split":"development","language":"zh","tags":["mixed_source","network","partial"],"review_status":"pending_review","labels":[{"source_id":"rag3","relevance":3,"role":"support"}]},
+    {"id":"both_refund_no_patch","query":"重复扣款退款反馈与补丁说明","kind":"both","split":"holdout","language":"zh","tags":["mixed_source","payment","partial"],"review_status":"pending_review","labels":[{"source_id":"rag5","relevance":3,"role":"support"}]},
+    {"id":"both_voice_no_patch","query":"中文配音诉求和官方更新回应","kind":"both","split":"development","language":"zh","tags":["mixed_source","localization","partial"],"review_status":"pending_review","labels":[{"source_id":"rag7","relevance":3,"role":"support"}]},
+    {"id":"both_stability_counter","query":"启动稳定性修复以及玩家仍然闪退和从不闪退的相反体验","kind":"both","split":"holdout","language":"zh","tags":["mixed_source","counterexample","startup"],"review_status":"pending_review","labels":[{"source_id":"rag-news1","relevance":3,"role":"support"},{"source_id":"rag1","relevance":3,"role":"support"},{"source_id":"rag6","relevance":2,"role":"counterexample"}]}
+  ]
+}

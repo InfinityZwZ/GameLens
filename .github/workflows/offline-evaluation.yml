@@ -1,0 +1,33 @@
+name: Offline tests and evaluation
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  offline:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONIOENCODING: utf-8
+      LLM_API_KEY: ""
+      OPENAI_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+      - run: python evaluate.py --mode offline --output-dir evals/results/ci-offline
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: offline-evaluation-${{ matrix.os }}
+          path: |
+            evals/results/ci-offline/report.md
+            evals/results/ci-offline/summary.json

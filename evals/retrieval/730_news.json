@@ -1,0 +1,28 @@
+[
+  {
+    "news_id": "rag-news1",
+    "appid": 730,
+    "title": "启动稳定性修复",
+    "contents": "修复部分设备在启动阶段退出到桌面、无法进入主菜单的问题。",
+    "url": "https://example.invalid/fixture/1",
+    "author": "",
+    "feed_label": "fixture",
+    "feed_name": "fixture",
+    "published_at": "2027-01-12T08:00:00.000Z",
+    "published_at_timestamp": 1799740800,
+    "is_patch_candidate": true
+  },
+  {
+    "news_id": "rag-news2",
+    "appid": 730,
+    "title": "音频更新",
+    "contents": "调整新地图中的脚步声传播效果，并修复部分字幕翻译。",
+    "url": "https://example.invalid/fixture/2",
+    "author": "",
+    "feed_label": "fixture",
+    "feed_name": "fixture",
+    "published_at": "2027-01-12T14:00:00.000Z",
+    "published_at_timestamp": 1799762400,
+    "is_patch_candidate": true
+  }
+]

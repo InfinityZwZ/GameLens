@@ -1,0 +1,21 @@
+{
+  "name": "cached_cs2_analysis",
+  "expected_tools_in_order": [
+    "inspect_data",
+    "assess_evidence"
+  ],
+  "required_artifacts": [
+    "final_report",
+    "evidence_assessed"
+  ],
+  "required_answer_fragments": [
+    "完整",
+    "样本"
+  ],
+  "forbidden_answer_fragments": [
+    "性能问题确定上升",
+    "崩溃问题确定上升"
+  ],
+  "max_tool_steps": 3,
+  "require_completed": true
+}

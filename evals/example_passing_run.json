@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "observations": [
+    {
+      "tool": "inspect_data"
+    },
+    {
+      "tool": "assess_evidence"
+    }
+  ],
+  "artifacts": {
+    "final_report": "reports/example_impact_report.md",
+    "evidence_assessed": "true"
+  },
+  "final_answer": "完整评论窗口给出总体统计，LLM分类样本只用于解释主题变化，两者不应混为一谈。"
+}
